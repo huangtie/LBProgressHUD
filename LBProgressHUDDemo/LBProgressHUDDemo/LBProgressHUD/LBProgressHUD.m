@@ -162,7 +162,7 @@ static CGFloat toastWidth = 70;
         self.toast.transform = CGAffineTransformScale(self.transform,0.2,0.2);
         
         [UIView animateWithDuration:.3 animations:^{
-            self.toast.transform = CGAffineTransformScale(self.transform,1.2,1.2);
+            self.toast.transform = CGAffineTransformScale(self.transform,1.05,1.05);
         } completion:^(BOOL finished) {
             [UIView animateWithDuration:.3 animations:^{
                 self.toast.transform = CGAffineTransformIdentity;
@@ -173,8 +173,8 @@ static CGFloat toastWidth = 70;
 
 - (void)hide:(BOOL)animated
 {
-    [UIView animateWithDuration:animated ? .3 : 0 animations:^{
-        self.toast.transform = CGAffineTransformScale(self.transform,1.2,1.2);
+    [UIView animateWithDuration:animated ? .3 : 0 delay:.1 options:UIViewAnimationOptionCurveEaseOut  animations:^{
+        self.toast.transform = CGAffineTransformScale(self.transform,1.05,1.05);
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:animated ? .3 : 0 animations:^{
             self.toast.transform = CGAffineTransformScale(self.transform,0.2,0.2);
